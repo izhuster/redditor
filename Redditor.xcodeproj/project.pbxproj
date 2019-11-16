@@ -14,6 +14,8 @@
 		55B1CD652380540100224913 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55B1CD642380540100224913 /* Assets.xcassets */; };
 		55B1CD682380540100224913 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55B1CD662380540100224913 /* LaunchScreen.storyboard */; };
 		55B1CD732380540100224913 /* RedditorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B1CD722380540100224913 /* RedditorTests.swift */; };
+		55B1CD802380576F00224913 /* PostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B1CD7F2380576F00224913 /* PostDetailViewController.swift */; };
+		55B1CD82238058B800224913 /* PostsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B1CD81238058B800224913 /* PostsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +40,8 @@
 		55B1CD6E2380540100224913 /* RedditorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RedditorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		55B1CD722380540100224913 /* RedditorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedditorTests.swift; sourceTree = "<group>"; };
 		55B1CD742380540100224913 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		55B1CD7F2380576F00224913 /* PostDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailViewController.swift; sourceTree = "<group>"; };
+		55B1CD81238058B800224913 /* PostsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +83,7 @@
 		55B1CD5A238053FE00224913 /* Redditor */ = {
 			isa = PBXGroup;
 			children = (
+				55B1CD7D2380571E00224913 /* Posts */,
 				55B1CD5B238053FE00224913 /* AppDelegate.swift */,
 				55B1CD5D238053FE00224913 /* SceneDelegate.swift */,
 				55B1CD5F238053FE00224913 /* ViewController.swift */,
@@ -97,6 +102,23 @@
 				55B1CD742380540100224913 /* Info.plist */,
 			);
 			path = RedditorTests;
+			sourceTree = "<group>";
+		};
+		55B1CD7D2380571E00224913 /* Posts */ = {
+			isa = PBXGroup;
+			children = (
+				55B1CD7E2380573600224913 /* Detail */,
+				55B1CD81238058B800224913 /* PostsTableViewController.swift */,
+			);
+			path = Posts;
+			sourceTree = "<group>";
+		};
+		55B1CD7E2380573600224913 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				55B1CD7F2380576F00224913 /* PostDetailViewController.swift */,
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,8 +223,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				55B1CD60238053FE00224913 /* ViewController.swift in Sources */,
+				55B1CD802380576F00224913 /* PostDetailViewController.swift in Sources */,
 				55B1CD5C238053FE00224913 /* AppDelegate.swift in Sources */,
 				55B1CD5E238053FE00224913 /* SceneDelegate.swift in Sources */,
+				55B1CD82238058B800224913 /* PostsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
