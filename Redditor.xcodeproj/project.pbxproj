@@ -19,6 +19,11 @@
 		55B1CD8523805C3C00224913 /* SplitViewConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B1CD8423805C3C00224913 /* SplitViewConfigurator.swift */; };
 		55CF743C2381FAFE00412A19 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CF743B2381FAFE00412A19 /* Reusable.swift */; };
 		55CF74402381FB2600412A19 /* UITableView+Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CF743F2381FB2600412A19 /* UITableView+Reusable.swift */; };
+		55CF74432381FC3600412A19 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CF74422381FC3600412A19 /* Repository.swift */; };
+		55CF74462381FF5300412A19 /* NetworkClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CF74452381FF5300412A19 /* NetworkClientProtocol.swift */; };
+		55CF74482381FF6000412A19 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CF74472381FF6000412A19 /* NetworkClient.swift */; };
+		55CF744B2381FF8C00412A19 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CF744A2381FF8C00412A19 /* Post.swift */; };
+		55CF744D2381FFDE00412A19 /* PostRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CF744C2381FFDE00412A19 /* PostRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +53,11 @@
 		55B1CD8423805C3C00224913 /* SplitViewConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitViewConfigurator.swift; sourceTree = "<group>"; };
 		55CF743B2381FAFE00412A19 /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 		55CF743F2381FB2600412A19 /* UITableView+Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Reusable.swift"; sourceTree = "<group>"; };
+		55CF74422381FC3600412A19 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		55CF74452381FF5300412A19 /* NetworkClientProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClientProtocol.swift; sourceTree = "<group>"; };
+		55CF74472381FF6000412A19 /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
+		55CF744A2381FF8C00412A19 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		55CF744C2381FFDE00412A19 /* PostRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +99,8 @@
 		55B1CD5A238053FE00224913 /* Redditor */ = {
 			isa = PBXGroup;
 			children = (
+				55CF74442381FF3500412A19 /* Network */,
+				55CF74412381FC1200412A19 /* Repository */,
 				55CF743D2381FB0700412A19 /* Extensions */,
 				55CF743A2381FAE500412A19 /* Utlities */,
 				55B1CD8323805BEF00224913 /* Navigation */,
@@ -116,6 +128,7 @@
 		55B1CD7D2380571E00224913 /* Posts */ = {
 			isa = PBXGroup;
 			children = (
+				55CF74492381FF8200412A19 /* Models */,
 				55B1CD7E2380573600224913 /* Detail */,
 				55B1CD81238058B800224913 /* PostsTableViewController.swift */,
 			);
@@ -160,6 +173,32 @@
 				55CF743F2381FB2600412A19 /* UITableView+Reusable.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		55CF74412381FC1200412A19 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				55CF74422381FC3600412A19 /* Repository.swift */,
+				55CF744C2381FFDE00412A19 /* PostRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		55CF74442381FF3500412A19 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				55CF74452381FF5300412A19 /* NetworkClientProtocol.swift */,
+				55CF74472381FF6000412A19 /* NetworkClient.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		55CF74492381FF8200412A19 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				55CF744A2381FF8C00412A19 /* Post.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,11 +305,16 @@
 				55B1CD60238053FE00224913 /* ViewController.swift in Sources */,
 				55B1CD802380576F00224913 /* PostDetailViewController.swift in Sources */,
 				55B1CD5C238053FE00224913 /* AppDelegate.swift in Sources */,
+				55CF744B2381FF8C00412A19 /* Post.swift in Sources */,
+				55CF744D2381FFDE00412A19 /* PostRepository.swift in Sources */,
+				55CF74482381FF6000412A19 /* NetworkClient.swift in Sources */,
 				55B1CD5E238053FE00224913 /* SceneDelegate.swift in Sources */,
 				55CF74402381FB2600412A19 /* UITableView+Reusable.swift in Sources */,
 				55B1CD8523805C3C00224913 /* SplitViewConfigurator.swift in Sources */,
 				55B1CD82238058B800224913 /* PostsTableViewController.swift in Sources */,
 				55CF743C2381FAFE00412A19 /* Reusable.swift in Sources */,
+				55CF74432381FC3600412A19 /* Repository.swift in Sources */,
+				55CF74462381FF5300412A19 /* NetworkClientProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

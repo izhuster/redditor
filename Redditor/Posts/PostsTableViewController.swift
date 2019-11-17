@@ -12,6 +12,8 @@ final class PostsTableViewController: UITableViewController {
 
     var titles = ["1", "2"]
     
+    var postRepository: PostRepository?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -19,17 +21,22 @@ final class PostsTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return postRepository?.sections ?? 0
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return titles.count
+        return postRepository?.numberOfRows(inSection: section) ?? 0
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueCell(for: indexPath) as UITableViewCell
-        cell.textLabel?.text = titles[indexPath.row]
+        
+        guard let post = postRepository?.item(for: indexPath) else {
+            return cell
+        }
+        
+        cell.textLabel?.text = post.title
         return cell
     }
     
@@ -40,9 +47,17 @@ final class PostsTableViewController: UITableViewController {
     }
     
     private func preparePostDetailViewController(for segue: UIStoryboardSegue, sender: Any?) {
+        
         guard
             let cell = sender as? UITableViewCell,
             let indexPath = tableView.indexPath(for: cell),
+            let post = postRepository?.item(for: indexPath)
+        else {
+            assertionFailure("Expected a 'Post'")
+            return
+        }
+        
+        guard
             let navigationController = segue.destination as? UINavigationController,
             let postDetailViewController = navigationController.topViewController as? PostDetailViewController
         else {
@@ -50,8 +65,7 @@ final class PostsTableViewController: UITableViewController {
             return
         }
         
-        let title = titles[indexPath.row]
-        postDetailViewController.postTitle = title
+        postDetailViewController.postTitle = post.title
     }
 
     /*
