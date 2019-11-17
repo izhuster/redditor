@@ -14,29 +14,50 @@
                     <view key="view" contentMode="scaleToFill" id="WFV-C5-8cF">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yzs-Wk-EjK">
-                                <rect key="frame" x="186" y="437.66666666666669" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="yzs-Wk-EjK" firstAttribute="centerX" secondItem="WFV-C5-8cF" secondAttribute="centerX" id="APR-Ph-p1L"/>
-                            <constraint firstItem="yzs-Wk-EjK" firstAttribute="centerY" secondItem="WFV-C5-8cF" secondAttribute="centerY" id="CF2-Zj-sgP"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="h9x-eY-ljH"/>
                     </view>
                     <navigationItem key="navigationItem" id="zum-Xv-Agn"/>
                     <connections>
-                        <outlet property="titleLabel" destination="yzs-Wk-EjK" id="GMr-ie-Gtd"/>
+                        <outlet property="emptyView" destination="9CS-zr-ACf" id="Ugy-2L-0Z0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="28U-Z7-90k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="9CS-zr-ACf">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="192"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="exclamationmark.bubble" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="AqD-2Z-adV">
+                            <rect key="frame" x="157" y="1.3333333333333357" width="100" height="99.000000000000014"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="100" id="5RW-zX-ECW"/>
+                                <constraint firstAttribute="width" constant="100" id="jCc-0V-Uzs"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RHN-S6-TaN">
+                            <rect key="frame" x="20" y="107.33333333333331" width="374" height="61"/>
+                            <string key="text">It's pretty lonely here.
+
+Select a post to see it here.</string>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstItem="RHN-S6-TaN" firstAttribute="centerX" secondItem="AqD-2Z-adV" secondAttribute="centerX" id="NtL-4j-dgz"/>
+                        <constraint firstItem="RHN-S6-TaN" firstAttribute="top" secondItem="AqD-2Z-adV" secondAttribute="bottom" constant="7.3333333333333144" id="OAu-B7-GUU"/>
+                        <constraint firstAttribute="bottom" secondItem="RHN-S6-TaN" secondAttribute="bottom" constant="23.670000000000002" id="Otc-gx-Iqg"/>
+                        <constraint firstItem="AqD-2Z-adV" firstAttribute="centerX" secondItem="9CS-zr-ACf" secondAttribute="centerX" id="Tb5-i5-FIW"/>
+                        <constraint firstItem="RHN-S6-TaN" firstAttribute="leading" secondItem="9CS-zr-ACf" secondAttribute="leading" priority="999" constant="20" id="VBW-Vl-0o3"/>
+                        <constraint firstAttribute="trailing" secondItem="RHN-S6-TaN" secondAttribute="trailing" priority="999" constant="20" id="gSL-lj-GZT"/>
+                        <constraint firstItem="AqD-2Z-adV" firstAttribute="top" secondItem="9CS-zr-ACf" secondAttribute="top" id="sL6-wQ-cKc"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="SNb-zO-epZ"/>
+                </view>
             </objects>
-            <point key="canvasLocation" x="1700" y="171"/>
+            <point key="canvasLocation" x="1700.0000000000002" y="170.75892857142856"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="MmT-Lx-M9C">
@@ -128,6 +149,9 @@
             <point key="canvasLocation" x="825" y="171"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="exclamationmark.bubble" catalog="system" width="64" height="54"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="OIa-6C-ZBj"/>
     </inferredMetricsTieBreakers>

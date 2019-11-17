@@ -9,13 +9,22 @@
 import UIKit
 
 final class PostDetailViewController: UIViewController {
-
-    @IBOutlet private weak var titleLabel: UILabel!
+    
+    @IBOutlet var emptyView: UIView!
+    
     var postTitle: String?
+    
+    var post: Post?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        titleLabel.text = postTitle
+        
+        guard let post = post else {
+            view.addSubview(emptyView)
+            return
+        }
+        
+        
     }
 
 }
