@@ -10,8 +10,12 @@ import UIKit
 
 final class PostDetailViewController: UIViewController {
 
+    @IBOutlet private weak var titleLabel: UILabel!
+    var postTitle: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        titleLabel.text = postTitle
     }
 
 }

@@ -17,6 +17,8 @@
 		55B1CD802380576F00224913 /* PostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B1CD7F2380576F00224913 /* PostDetailViewController.swift */; };
 		55B1CD82238058B800224913 /* PostsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B1CD81238058B800224913 /* PostsTableViewController.swift */; };
 		55B1CD8523805C3C00224913 /* SplitViewConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B1CD8423805C3C00224913 /* SplitViewConfigurator.swift */; };
+		55CF743C2381FAFE00412A19 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CF743B2381FAFE00412A19 /* Reusable.swift */; };
+		55CF74402381FB2600412A19 /* UITableView+Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CF743F2381FB2600412A19 /* UITableView+Reusable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		55B1CD7F2380576F00224913 /* PostDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailViewController.swift; sourceTree = "<group>"; };
 		55B1CD81238058B800224913 /* PostsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsTableViewController.swift; sourceTree = "<group>"; };
 		55B1CD8423805C3C00224913 /* SplitViewConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitViewConfigurator.swift; sourceTree = "<group>"; };
+		55CF743B2381FAFE00412A19 /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
+		55CF743F2381FB2600412A19 /* UITableView+Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Reusable.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +89,8 @@
 		55B1CD5A238053FE00224913 /* Redditor */ = {
 			isa = PBXGroup;
 			children = (
+				55CF743D2381FB0700412A19 /* Extensions */,
+				55CF743A2381FAE500412A19 /* Utlities */,
 				55B1CD8323805BEF00224913 /* Navigation */,
 				55B1CD7D2380571E00224913 /* Posts */,
 				55B1CD5B238053FE00224913 /* AppDelegate.swift */,
@@ -130,6 +136,30 @@
 				55B1CD8423805C3C00224913 /* SplitViewConfigurator.swift */,
 			);
 			path = Navigation;
+			sourceTree = "<group>";
+		};
+		55CF743A2381FAE500412A19 /* Utlities */ = {
+			isa = PBXGroup;
+			children = (
+				55CF743B2381FAFE00412A19 /* Reusable.swift */,
+			);
+			path = Utlities;
+			sourceTree = "<group>";
+		};
+		55CF743D2381FB0700412A19 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				55CF743E2381FB1100412A19 /* Views */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		55CF743E2381FB1100412A19 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				55CF743F2381FB2600412A19 /* UITableView+Reusable.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -237,8 +267,10 @@
 				55B1CD802380576F00224913 /* PostDetailViewController.swift in Sources */,
 				55B1CD5C238053FE00224913 /* AppDelegate.swift in Sources */,
 				55B1CD5E238053FE00224913 /* SceneDelegate.swift in Sources */,
+				55CF74402381FB2600412A19 /* UITableView+Reusable.swift in Sources */,
 				55B1CD8523805C3C00224913 /* SplitViewConfigurator.swift in Sources */,
 				55B1CD82238058B800224913 /* PostsTableViewController.swift in Sources */,
+				55CF743C2381FAFE00412A19 /* Reusable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

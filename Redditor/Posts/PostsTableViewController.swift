@@ -14,36 +14,45 @@ final class PostsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return titles.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let identifier = "UITableViewCell"
-        let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath)
-
+        let cell = tableView.dequeueCell(for: indexPath) as UITableViewCell
         cell.textLabel?.text = titles[indexPath.row]
-
         return cell
     }
     
+    // MARK: - Navigation
+    // MARK: -
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        preparePostDetailViewController(for: segue, sender: sender)
+    }
+    
+    private func preparePostDetailViewController(for segue: UIStoryboardSegue, sender: Any?) {
+        guard
+            let cell = sender as? UITableViewCell,
+            let indexPath = tableView.indexPath(for: cell),
+            let navigationController = segue.destination as? UINavigationController,
+            let postDetailViewController = navigationController.topViewController as? PostDetailViewController
+        else {
+            assertionFailure("Expected a 'PostDetailViewController'")
+            return
+        }
+        
+        let title = titles[indexPath.row]
+        postDetailViewController.postTitle = title
+    }
 
     /*
     // Override to support conditional editing of the table view.
@@ -77,16 +86,6 @@ final class PostsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the item to be re-orderable.
         return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
     }
     */
 
