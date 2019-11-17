@@ -21,6 +21,7 @@ final class PostDetailViewController: UIViewController {
         
         guard let post = post else {
             view.addSubview(emptyView)
+            emptyView.centerToSuperview()
             return
         }
         

@@ -24,6 +24,7 @@
 		55CF74482381FF6000412A19 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CF74472381FF6000412A19 /* NetworkClient.swift */; };
 		55CF744B2381FF8C00412A19 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CF744A2381FF8C00412A19 /* Post.swift */; };
 		55CF744D2381FFDE00412A19 /* PostRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CF744C2381FFDE00412A19 /* PostRepository.swift */; };
+		55CF744F23820C0F00412A19 /* UIView+Autolayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CF744E23820C0F00412A19 /* UIView+Autolayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		55CF74472381FF6000412A19 /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		55CF744A2381FF8C00412A19 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		55CF744C2381FFDE00412A19 /* PostRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRepository.swift; sourceTree = "<group>"; };
+		55CF744E23820C0F00412A19 /* UIView+Autolayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Autolayout.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				55CF743F2381FB2600412A19 /* UITableView+Reusable.swift */,
+				55CF744E23820C0F00412A19 /* UIView+Autolayout.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -303,6 +306,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				55B1CD60238053FE00224913 /* ViewController.swift in Sources */,
+				55CF744F23820C0F00412A19 /* UIView+Autolayout.swift in Sources */,
 				55B1CD802380576F00224913 /* PostDetailViewController.swift in Sources */,
 				55B1CD5C238053FE00224913 /* AppDelegate.swift in Sources */,
 				55CF744B2381FF8C00412A19 /* Post.swift in Sources */,
