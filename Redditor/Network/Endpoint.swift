@@ -23,7 +23,7 @@ enum Endpoint {
     }
     
     var parameters: [String: String] {
-        return [:]
+        return ["limit": "50"]
     }
     
     var httpMethod: HTTPMethod {
@@ -34,11 +34,20 @@ enum Endpoint {
     }
     
     func createRequest() -> URLRequest? {
-        guard var url = URL(string: baseURLString) else {
+        
+        var baseUrl = baseURLString
+        
+        if parameters.isEmpty {
+            baseUrl += path
+        } else {
+            let pathCompoenent = "\(path)?\(parameters.toURLEncodedString())"
+            baseUrl += pathCompoenent
+        }
+        
+        guard let url = URL(string: baseUrl) else {
             return nil
         }
         
-        url.appendPathComponent(path)
         // append parameters
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = httpMethod.value

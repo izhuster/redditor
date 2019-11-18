@@ -27,6 +27,7 @@ final class PostsTableViewController: UITableViewController {
     // MARK: - Network
     // MARK: -
     @objc private func requestFetchData() {
+        refreshControl?.beginRefreshing()
         postRepository?.fetchData(completion: { [weak self] (result) in
             guard let self = self else { return }
             switch result {
