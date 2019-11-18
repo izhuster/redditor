@@ -51,7 +51,7 @@ final class PostsTableViewController: UITableViewController {
             return cell
         }
         cell.alreadySeen = postRepository?.alreadySeen(withId: post.id) ?? false
-        cell.configure(withTitle: post.title, author: post.author)
+        cell.configure(withTitle: post.title, author: post.author, numberOfComments: "\(post.numberOfComments)")
         return cell
     }
     

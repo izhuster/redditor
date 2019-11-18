@@ -13,4 +13,10 @@ struct Post: Codable {
     let title: String
     let author: String
     let created: Int
+    let numberOfComments: Int
+    
+    enum CodingKeys: String, CodingKey {
+        case id, title, author, created
+        case numberOfComments = "num_comments"
+    }
 }
