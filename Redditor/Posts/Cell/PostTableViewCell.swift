@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol PostTableViewCellDelegate: AnyObject {
+    func postTableViewCell(_ cell: PostTableViewCell, didSelectRemove sender: UIButton)
+}
+
 final class PostTableViewCell: UITableViewCell {
     // MARK: - Public Properties
     var alreadySeen: Bool = false {
@@ -18,6 +22,8 @@ final class PostTableViewCell: UITableViewCell {
             }
         }
     }
+    
+    weak var delegate: PostTableViewCellDelegate?
 
     // MARK: - Private Properties
     @IBOutlet private weak var containerView: UIView!
@@ -28,10 +34,19 @@ final class PostTableViewCell: UITableViewCell {
     @IBOutlet private weak var commentsLabel: UILabel!
     @IBOutlet private weak var entryDateLabel: UILabel!
     
+    // MARK: - Private Methods
+    @IBAction private func removeTouchUpInside(_ sender: UIButton) {
+        if let delegate = delegate {
+            delegate.postTableViewCell(self, didSelectRemove: sender)
+        } else {
+            print("Delegate not set.")
+        }
+    }
+    
     // MARK: - Public Methods
     func configure(withTitle title: String, author: String, numberOfComments: String, elapsedTime: String) {
         titleLabel.text = title
-        authorLabel.text = author
+        authorLabel.text = "By: " + author
         commentsLabel.text = "\(numberOfComments) comments"
         entryDateLabel.text = elapsedTime
     }

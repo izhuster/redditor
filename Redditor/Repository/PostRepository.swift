@@ -60,4 +60,12 @@ final class PostRepository: Repository {
     func alreadySeen(withId id: String) -> Bool {
         return seenPosts.contains(id)
     }
+    
+    func removeItem(at indexPath: IndexPath) {
+        guard indexPath.row < posts.count else {
+            return
+        }
+        
+        posts.remove(at: indexPath.row)
+    }
 }

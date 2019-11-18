@@ -11,7 +11,6 @@ import Foundation
 extension Date {
     func elapsedTime() -> String {
         if let hours = Calendar.current.dateComponents([.hour], from: self, to: Date()).hour {
-            print("hours: \(hours)")
             let elapsedTime = hours == 1 ? "\(hours) hour ago" : "\(hours) hours ago"
             return elapsedTime
         } else {

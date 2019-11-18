@@ -18,4 +18,5 @@ protocol Repository: AnyObject {
     func numberOfRows(inSection section: Int) -> Int
     func markAsSeen(withId id: String)
     func alreadySeen(withId id: String) -> Bool
+    func removeItem(at indexPath: IndexPath)
 }

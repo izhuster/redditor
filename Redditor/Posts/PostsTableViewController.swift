@@ -10,10 +10,12 @@ import UIKit
 
 final class PostsTableViewController: UITableViewController {
 
-    var titles = ["1", "2"]
-    
+    // MARK: - Public Properties
+    // MARK: -
     var postRepository: PostRepository?
     
+    // MARK: - Life View Cycle
+    // MARK: -
     override func viewDidLoad() {
         super.viewDidLoad()
         postRepository?.fetchData(completion: { [weak self] (result) in
@@ -34,7 +36,7 @@ final class PostsTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-
+    // MARK: -
     override func numberOfSections(in tableView: UITableView) -> Int {
         return postRepository?.sections ?? 0
     }
@@ -53,6 +55,7 @@ final class PostsTableViewController: UITableViewController {
         
         let elapsedTime = Date(timeIntervalSince1970: Double(post.created)).elapsedTime()
         cell.alreadySeen = postRepository?.alreadySeen(withId: post.id) ?? false
+        cell.delegate = self
         cell.configure(
             withTitle: post.title,
             author: post.author,
@@ -90,39 +93,30 @@ final class PostsTableViewController: UITableViewController {
         postDetailViewController.post = post
     }
 
-    /*
-    // Override to support conditional editing of the table view.
+    // MARK: - Table view delegate
+    // MARK: -
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
         return true
     }
-    */
-
-    /*
-    // Override to support editing the table view.
+    
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            // Delete the row from the data source
+            postRepository?.removeItem(at: indexPath)
             tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
     }
-    */
 
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
+}
 
+// MARK: - PostTableViewCellDelegate
+// MARK: -
+extension PostsTableViewController: PostTableViewCellDelegate {
+    func postTableViewCell(_ cell: PostTableViewCell, didSelectRemove sender: UIButton) {
+        guard let indexPath = tableView.indexPath(for: cell) else {
+            return
+        }
+    
+        postRepository?.removeItem(at: indexPath)
+        tableView.deleteRows(at: [indexPath], with: .automatic)
     }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
 }
