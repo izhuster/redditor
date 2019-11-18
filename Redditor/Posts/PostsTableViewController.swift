@@ -10,7 +10,7 @@ import UIKit
 
 final class PostsTableViewController: UITableViewController {
 
-    // MARK: - Public Properties
+    // MARK: - Properties
     // MARK: -
     var postRepository: PostRepository?
     @IBOutlet private var dismissAllContainerView: UIView!
@@ -26,7 +26,7 @@ final class PostsTableViewController: UITableViewController {
     
     // MARK: - Network
     // MARK: -
-    private func requestFetchData() {
+    @objc private func requestFetchData() {
         postRepository?.fetchData(completion: { [weak self] (result) in
             guard let self = self else { return }
             switch result {
@@ -34,7 +34,11 @@ final class PostsTableViewController: UITableViewController {
                 print("fetch was successful: \(success)")
                 if success {
                     self.reloadData()
+                    DispatchQueue.main.async {
+                        self.refreshControl?.endRefreshing()
+                    }
                 }
+                
             case .failure(let error):
                 print(error)
             }
@@ -45,6 +49,11 @@ final class PostsTableViewController: UITableViewController {
     // MARK: -
     private func configureTableView() {
         tableView.tableFooterView = dismissAllContainerView
+        refreshControl = UIRefreshControl()
+        refreshControl?.addTarget(self, action: #selector(requestFetchData), for: .valueChanged)
+        refreshControl?.attributedTitle = NSAttributedString(
+            string: NSLocalizedString("Pull to Refresh", comment: "")
+        )
     }
     
     // MARK: - Actions
