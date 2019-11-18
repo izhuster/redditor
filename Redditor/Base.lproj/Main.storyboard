@@ -182,6 +182,9 @@ Select a post to see it here.</string>
                                                     </constraints>
                                                     <color key="tintColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <state key="normal" backgroundImage="trash.circle" catalog="system"/>
+                                                    <connections>
+                                                        <action selector="removeTouchUpInside:" destination="7F6-bN-Kad" eventType="touchUpInside" id="Jrr-ve-j5L"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>

@@ -35,7 +35,7 @@ extension UIImageView {
                 completion?(.success(image))
 
             case .failure(let error):
-                print("url: \(url.absoluteString). ERROR: \(error)")
+                print("url: \(url.absoluteString). ERROR: \(error.localizedDescription)")
                 DispatchQueue.main.async {
                     self.image = placeholderImage
                 }
