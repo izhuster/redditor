@@ -7,9 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		557F1F9923824E950059C3DE /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557F1F9823824E950059C3DE /* Response.swift */; };
+		557F1F9B23824EB30059C3DE /* Response+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557F1F9A23824EB30059C3DE /* Response+Data.swift */; };
+		557F1F9D23824ED10059C3DE /* Response+Child.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557F1F9C23824ED10059C3DE /* Response+Child.swift */; };
+		557F1F9F23824F720059C3DE /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557F1F9E23824F720059C3DE /* Endpoint.swift */; };
+		557F1FA123824F930059C3DE /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557F1FA023824F930059C3DE /* HTTPMethod.swift */; };
+		557F1FA423824FAE0059C3DE /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557F1FA323824FAE0059C3DE /* Environment.swift */; };
+		557F1FA623824FC20059C3DE /* EndpointError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557F1FA523824FC20059C3DE /* EndpointError.swift */; };
 		55B1CD5C238053FE00224913 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B1CD5B238053FE00224913 /* AppDelegate.swift */; };
 		55B1CD5E238053FE00224913 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B1CD5D238053FE00224913 /* SceneDelegate.swift */; };
-		55B1CD60238053FE00224913 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B1CD5F238053FE00224913 /* ViewController.swift */; };
 		55B1CD63238053FE00224913 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55B1CD61238053FE00224913 /* Main.storyboard */; };
 		55B1CD652380540100224913 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55B1CD642380540100224913 /* Assets.xcassets */; };
 		55B1CD682380540100224913 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55B1CD662380540100224913 /* LaunchScreen.storyboard */; };
@@ -39,10 +45,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		557F1F9823824E950059C3DE /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		557F1F9A23824EB30059C3DE /* Response+Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Response+Data.swift"; sourceTree = "<group>"; };
+		557F1F9C23824ED10059C3DE /* Response+Child.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Response+Child.swift"; sourceTree = "<group>"; };
+		557F1F9E23824F720059C3DE /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		557F1FA023824F930059C3DE /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		557F1FA323824FAE0059C3DE /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		557F1FA523824FC20059C3DE /* EndpointError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointError.swift; sourceTree = "<group>"; };
 		55B1CD58238053FE00224913 /* Redditor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Redditor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55B1CD5B238053FE00224913 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55B1CD5D238053FE00224913 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		55B1CD5F238053FE00224913 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		55B1CD62238053FE00224913 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		55B1CD642380540100224913 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		55B1CD672380540100224913 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -82,6 +94,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		557F1FA223824FA30059C3DE /* App */ = {
+			isa = PBXGroup;
+			children = (
+				557F1FA323824FAE0059C3DE /* Environment.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
 		55B1CD4F238053FE00224913 = {
 			isa = PBXGroup;
 			children = (
@@ -103,19 +123,19 @@
 		55B1CD5A238053FE00224913 /* Redditor */ = {
 			isa = PBXGroup;
 			children = (
-				55CF74442381FF3500412A19 /* Network */,
-				55CF74412381FC1200412A19 /* Repository */,
-				55CF743D2381FB0700412A19 /* Extensions */,
-				55CF743A2381FAE500412A19 /* Utlities */,
-				55B1CD8323805BEF00224913 /* Navigation */,
-				55B1CD7D2380571E00224913 /* Posts */,
+				55B1CD692380540100224913 /* Info.plist */,
 				55B1CD5B238053FE00224913 /* AppDelegate.swift */,
 				55B1CD5D238053FE00224913 /* SceneDelegate.swift */,
-				55B1CD5F238053FE00224913 /* ViewController.swift */,
-				55B1CD61238053FE00224913 /* Main.storyboard */,
 				55B1CD642380540100224913 /* Assets.xcassets */,
+				557F1FA223824FA30059C3DE /* App */,
+				55CF743D2381FB0700412A19 /* Extensions */,
 				55B1CD662380540100224913 /* LaunchScreen.storyboard */,
-				55B1CD692380540100224913 /* Info.plist */,
+				55B1CD61238053FE00224913 /* Main.storyboard */,
+				55B1CD8323805BEF00224913 /* Navigation */,
+				55CF74442381FF3500412A19 /* Network */,
+				55B1CD7D2380571E00224913 /* Posts */,
+				55CF74412381FC1200412A19 /* Repository */,
+				55CF743A2381FAE500412A19 /* Utlities */,
 			);
 			path = Redditor;
 			sourceTree = "<group>";
@@ -193,8 +213,14 @@
 		55CF74442381FF3500412A19 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				55CF74452381FF5300412A19 /* NetworkClientProtocol.swift */,
+				557F1F9E23824F720059C3DE /* Endpoint.swift */,
+				557F1FA523824FC20059C3DE /* EndpointError.swift */,
+				557F1FA023824F930059C3DE /* HTTPMethod.swift */,
 				55CF74472381FF6000412A19 /* NetworkClient.swift */,
+				55CF74452381FF5300412A19 /* NetworkClientProtocol.swift */,
+				557F1F9823824E950059C3DE /* Response.swift */,
+				557F1F9C23824ED10059C3DE /* Response+Child.swift */,
+				557F1F9A23824EB30059C3DE /* Response+Data.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -316,17 +342,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				55B1CD60238053FE00224913 /* ViewController.swift in Sources */,
+				557F1F9D23824ED10059C3DE /* Response+Child.swift in Sources */,
+				557F1F9B23824EB30059C3DE /* Response+Data.swift in Sources */,
 				55CF744F23820C0F00412A19 /* UIView+Autolayout.swift in Sources */,
 				55CF745223821CE000412A19 /* PostTableViewCell.swift in Sources */,
 				55B1CD802380576F00224913 /* PostDetailViewController.swift in Sources */,
 				55B1CD5C238053FE00224913 /* AppDelegate.swift in Sources */,
 				55CF744B2381FF8C00412A19 /* Post.swift in Sources */,
+				557F1FA123824F930059C3DE /* HTTPMethod.swift in Sources */,
 				55CF744D2381FFDE00412A19 /* PostRepository.swift in Sources */,
+				557F1FA423824FAE0059C3DE /* Environment.swift in Sources */,
 				55CF74482381FF6000412A19 /* NetworkClient.swift in Sources */,
+				557F1F9923824E950059C3DE /* Response.swift in Sources */,
 				55B1CD5E238053FE00224913 /* SceneDelegate.swift in Sources */,
+				557F1F9F23824F720059C3DE /* Endpoint.swift in Sources */,
 				55CF74402381FB2600412A19 /* UITableView+Reusable.swift in Sources */,
 				55B1CD8523805C3C00224913 /* SplitViewConfigurator.swift in Sources */,
+				557F1FA623824FC20059C3DE /* EndpointError.swift in Sources */,
 				55B1CD82238058B800224913 /* PostsTableViewController.swift in Sources */,
 				55CF743C2381FAFE00412A19 /* Reusable.swift in Sources */,
 				55CF74432381FC3600412A19 /* Repository.swift in Sources */,

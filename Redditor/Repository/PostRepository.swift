@@ -23,10 +23,6 @@ final class PostRepository: Repository {
     
     init(networkClient: NetworkClientProtocol) {
         self.networkClient = networkClient
-        posts = [
-            Post(title: "My First Title"),
-            Post(title: "My second title")
-        ]
     }
     
     func item(for indexPath: IndexPath) -> Item? {
@@ -38,7 +34,19 @@ final class PostRepository: Repository {
     }
     
     func fetchData(completion: ((Result<Bool, Error>) -> Void)?) {
-        assertionFailure("Not yet implemented.")
+        networkClient.requestTopPosts { (result) in
+            switch result {
+            case .success(let response):
+                let posts = response.data.children.map { $0.data }
+                self.posts = posts
+                print(posts.count)
+                
+                completion?(.success(true))
+                
+            case .failure(let error):
+                completion?(.failure(error))
+            }
+        }
     }
     
     func numberOfRows(inSection section: Int) -> Int {

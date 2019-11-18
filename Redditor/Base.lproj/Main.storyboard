@@ -14,7 +14,7 @@
                     <view key="view" contentMode="scaleToFill" id="WFV-C5-8cF">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="h9x-eY-ljH"/>
                     </view>
                     <navigationItem key="navigationItem" id="zum-Xv-Agn"/>
@@ -127,7 +127,7 @@ Select a post to see it here.</string>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                             <constraints>
                                                 <constraint firstItem="b5F-SP-Yq1" firstAttribute="leading" secondItem="WnI-Pz-9IF" secondAttribute="trailing" constant="10" id="7P3-Dp-lXS"/>
                                                 <constraint firstAttribute="trailing" secondItem="b5F-SP-Yq1" secondAttribute="trailing" constant="10" id="8UI-YM-mwx"/>

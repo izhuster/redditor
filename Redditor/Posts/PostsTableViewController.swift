@@ -16,6 +16,21 @@ final class PostsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        postRepository?.fetchData(completion: { [weak self] (result) in
+            guard let self = self else { return }
+            switch result {
+            case .success(let success):
+                print("fetch was successful: \(success)")
+                if success {
+                    DispatchQueue.main.async {
+                        let indexSet = IndexSet(integer: 0)
+                        self.tableView.reloadSections(indexSet, with: .automatic)
+                    }
+                }
+            case .failure(let error):
+                print(error)
+            }
+        })
     }
 
     // MARK: - Table view data source
@@ -36,7 +51,7 @@ final class PostsTableViewController: UITableViewController {
             return cell
         }
         
-        cell.configure(withTitle: post.title)
+        cell.configure(withTitle: post.title, author: post.author)
         return cell
     }
     
@@ -47,7 +62,6 @@ final class PostsTableViewController: UITableViewController {
     }
     
     private func preparePostDetailViewController(for segue: UIStoryboardSegue, sender: Any?) {
-        
         guard
             let cell = sender as? UITableViewCell,
             let indexPath = tableView.indexPath(for: cell),
@@ -65,7 +79,7 @@ final class PostsTableViewController: UITableViewController {
             return
         }
         
-        postDetailViewController.postTitle = post.title
+        postDetailViewController.post = post
     }
 
     /*

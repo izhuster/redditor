@@ -1,5 +1,5 @@
 //
-//  Post.swift
+//  Response+Data.swift
 //  Redditor
 //
 //  Created by Alejandro Cárdenas on 17/11/19.
@@ -8,9 +8,9 @@
 
 import Foundation
 
-struct Post: Codable {
-    let id: String
-    let title: String
-    let author: String
-    let created: Int
+extension Response {
+    struct Data<Model: Codable>: Codable {
+        let dist: Int
+        let children: [Child<Model>]
+    }
 }

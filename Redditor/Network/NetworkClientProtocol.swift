@@ -9,5 +9,6 @@
 import Foundation
 
 protocol NetworkClientProtocol {
-    
+    init(urlSession: URLSession)
+    func requestTopPosts(completion: @escaping (Result<Response<Post>, Error>) -> Void)
 }

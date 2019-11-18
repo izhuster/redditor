@@ -1,5 +1,5 @@
 //
-//  Post.swift
+//  Environment.swift
 //  Redditor
 //
 //  Created by Alejandro Cárdenas on 17/11/19.
@@ -8,9 +8,8 @@
 
 import Foundation
 
-struct Post: Codable {
-    let id: String
-    let title: String
-    let author: String
-    let created: Int
+enum Environment {
+    static var baseURLString: String {
+        return "https://www.reddit.com/"
+    }
 }

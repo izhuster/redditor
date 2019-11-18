@@ -20,8 +20,9 @@ final class PostTableViewCell: UITableViewCell {
     @IBOutlet private weak var entryDateLabel: UILabel!
     
     // MARK: - Public Methods
-    func configure(withTitle title: String) {
+    func configure(withTitle title: String, author: String) {
         titleLabel.text = title
+        authorLabel.text = author
     }
 
 }

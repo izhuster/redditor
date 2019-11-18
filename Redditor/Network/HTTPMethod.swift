@@ -1,5 +1,5 @@
 //
-//  Post.swift
+//  HTTPMethod.swift
 //  Redditor
 //
 //  Created by Alejandro Cárdenas on 17/11/19.
@@ -8,9 +8,10 @@
 
 import Foundation
 
-struct Post: Codable {
-    let id: String
-    let title: String
-    let author: String
-    let created: Int
+enum HTTPMethod: String {
+    case get = "GET"
+    
+    var value: String {
+        return rawValue
+    }
 }
