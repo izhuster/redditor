@@ -9,8 +9,17 @@
 import UIKit
 
 final class PostTableViewCell: UITableViewCell {
+    // MARK: - Public Properties
+    var alreadySeen: Bool = false {
+        didSet {
+            let backgroundColor: UIColor = alreadySeen ? .systemBackground : .systemBlue
+            UIView.animate(withDuration: 0.25) {
+                self.readStatusView.backgroundColor = backgroundColor
+            }
+        }
+    }
 
-    // MARK: - Properties
+    // MARK: - Private Properties
     @IBOutlet private weak var containerView: UIView!
     @IBOutlet private weak var readStatusView: UIView!
     @IBOutlet private weak var titleLabel: UILabel!

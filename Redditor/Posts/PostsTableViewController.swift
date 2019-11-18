@@ -50,7 +50,7 @@ final class PostsTableViewController: UITableViewController {
         guard let post = postRepository?.item(for: indexPath) else {
             return cell
         }
-        
+        cell.alreadySeen = postRepository?.alreadySeen(withId: post.id) ?? false
         cell.configure(withTitle: post.title, author: post.author)
         return cell
     }
@@ -63,7 +63,7 @@ final class PostsTableViewController: UITableViewController {
     
     private func preparePostDetailViewController(for segue: UIStoryboardSegue, sender: Any?) {
         guard
-            let cell = sender as? UITableViewCell,
+            let cell = sender as? PostTableViewCell,
             let indexPath = tableView.indexPath(for: cell),
             let post = postRepository?.item(for: indexPath)
         else {
@@ -78,7 +78,8 @@ final class PostsTableViewController: UITableViewController {
             assertionFailure("Expected a 'PostDetailViewController'")
             return
         }
-        
+        postRepository?.markAsSeen(withId: post.id)
+        cell.alreadySeen = postRepository?.alreadySeen(withId: post.id) ?? false
         postDetailViewController.post = post
     }
 

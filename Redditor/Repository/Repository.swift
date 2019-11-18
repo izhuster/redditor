@@ -16,4 +16,6 @@ protocol Repository: AnyObject {
     func fetchData(completion: ((Result<Bool, Error>) -> Void)?)
     func item(for indexPath: IndexPath) -> Item?
     func numberOfRows(inSection section: Int) -> Int
+    func markAsSeen(withId id: String)
+    func alreadySeen(withId id: String) -> Bool
 }

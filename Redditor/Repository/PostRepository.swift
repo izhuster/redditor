@@ -12,7 +12,7 @@ final class PostRepository: Repository {
     typealias Item = Post
     private let networkClient: NetworkClientProtocol
     private var posts: [Post] = []
-    
+    private var seenPosts: Set<String> = []
     var count: Int {
         return posts.count
     }
@@ -51,5 +51,13 @@ final class PostRepository: Repository {
     
     func numberOfRows(inSection section: Int) -> Int {
         return posts.count
+    }
+    
+    func markAsSeen(withId id: String) {
+        seenPosts.insert(id)
+    }
+    
+    func alreadySeen(withId id: String) -> Bool {
+        return seenPosts.contains(id)
     }
 }
