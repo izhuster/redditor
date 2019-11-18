@@ -29,10 +29,11 @@ final class PostTableViewCell: UITableViewCell {
     @IBOutlet private weak var entryDateLabel: UILabel!
     
     // MARK: - Public Methods
-    func configure(withTitle title: String, author: String, numberOfComments: String) {
+    func configure(withTitle title: String, author: String, numberOfComments: String, elapsedTime: String) {
         titleLabel.text = title
         authorLabel.text = author
         commentsLabel.text = "\(numberOfComments) comments"
+        entryDateLabel.text = elapsedTime
     }
 
 }

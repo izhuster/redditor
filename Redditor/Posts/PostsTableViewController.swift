@@ -50,8 +50,15 @@ final class PostsTableViewController: UITableViewController {
         guard let post = postRepository?.item(for: indexPath) else {
             return cell
         }
+        
+        let elapsedTime = Date(timeIntervalSince1970: Double(post.created)).elapsedTime()
         cell.alreadySeen = postRepository?.alreadySeen(withId: post.id) ?? false
-        cell.configure(withTitle: post.title, author: post.author, numberOfComments: "\(post.numberOfComments)")
+        cell.configure(
+            withTitle: post.title,
+            author: post.author,
+            numberOfComments: "\(post.numberOfComments)",
+            elapsedTime: elapsedTime
+        )
         return cell
     }
     
