@@ -19,6 +19,7 @@ final class PostsTableViewController: UITableViewController {
     // MARK: -
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.title = NSLocalizedString("Posts", comment: "")
         configureTableView()
         requestFetchData()
     }
