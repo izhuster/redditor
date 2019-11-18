@@ -25,6 +25,7 @@
 		55CF744B2381FF8C00412A19 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CF744A2381FF8C00412A19 /* Post.swift */; };
 		55CF744D2381FFDE00412A19 /* PostRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CF744C2381FFDE00412A19 /* PostRepository.swift */; };
 		55CF744F23820C0F00412A19 /* UIView+Autolayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CF744E23820C0F00412A19 /* UIView+Autolayout.swift */; };
+		55CF745223821CE000412A19 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CF745123821CE000412A19 /* PostTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		55CF744A2381FF8C00412A19 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		55CF744C2381FFDE00412A19 /* PostRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRepository.swift; sourceTree = "<group>"; };
 		55CF744E23820C0F00412A19 /* UIView+Autolayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Autolayout.swift"; sourceTree = "<group>"; };
+		55CF745123821CE000412A19 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +132,7 @@
 		55B1CD7D2380571E00224913 /* Posts */ = {
 			isa = PBXGroup;
 			children = (
+				55CF745023821CCD00412A19 /* Cell */,
 				55CF74492381FF8200412A19 /* Models */,
 				55B1CD7E2380573600224913 /* Detail */,
 				55B1CD81238058B800224913 /* PostsTableViewController.swift */,
@@ -202,6 +205,14 @@
 				55CF744A2381FF8C00412A19 /* Post.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		55CF745023821CCD00412A19 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				55CF745123821CE000412A19 /* PostTableViewCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -307,6 +318,7 @@
 			files = (
 				55B1CD60238053FE00224913 /* ViewController.swift in Sources */,
 				55CF744F23820C0F00412A19 /* UIView+Autolayout.swift in Sources */,
+				55CF745223821CE000412A19 /* PostTableViewCell.swift in Sources */,
 				55B1CD802380576F00224913 /* PostDetailViewController.swift in Sources */,
 				55B1CD5C238053FE00224913 /* AppDelegate.swift in Sources */,
 				55CF744B2381FF8C00412A19 /* Post.swift in Sources */,

@@ -30,13 +30,13 @@ final class PostsTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueCell(for: indexPath) as UITableViewCell
+        let cell = tableView.dequeueCell(for: indexPath) as PostTableViewCell
         
         guard let post = postRepository?.item(for: indexPath) else {
             return cell
         }
         
-        cell.textLabel?.text = post.title
+        cell.configure(withTitle: post.title)
         return cell
     }
     
