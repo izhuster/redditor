@@ -44,11 +44,20 @@ final class PostTableViewCell: UITableViewCell {
     }
     
     // MARK: - Public Methods
-    func configure(withTitle title: String, author: String, numberOfComments: String, elapsedTime: String) {
+    func configure(
+        withTitle title: String,
+        author: String,
+        numberOfComments: String,
+        elapsedTime: String,
+        thumbnailUrl: String)
+    {
         titleLabel.text = title
         authorLabel.text = "By: " + author
         commentsLabel.text = "\(numberOfComments) comments"
         entryDateLabel.text = elapsedTime
+        let placeholder = UIImage(systemName: "dot.radiowaves.left.and.right")
+        let urlString = thumbnailUrl.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
+        postImageView.downloadImage(with: URL(string: urlString), placeholderImage: placeholder)
     }
 
 }

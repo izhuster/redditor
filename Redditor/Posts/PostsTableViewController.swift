@@ -86,7 +86,8 @@ final class PostsTableViewController: UITableViewController {
             withTitle: post.title,
             author: post.author,
             numberOfComments: "\(post.numberOfComments)",
-            elapsedTime: elapsedTime
+            elapsedTime: elapsedTime,
+            thumbnailUrl: post.thumbnail
         )
         return cell
     }

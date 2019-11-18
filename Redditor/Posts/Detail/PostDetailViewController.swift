@@ -47,6 +47,10 @@ final class PostDetailViewController: UIViewController {
         numberOfCommentsLabel.text = "\(post.numberOfComments) comments"
         let elapsedTime = Date(timeIntervalSince1970: Double(post.created)).elapsedTime()
         entryDateLabel.text = elapsedTime
+        let placeholder = UIImage(systemName: "dot.radiowaves.left.and.right")
+        let urlString = post.thumbnail.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
+        imageView.downloadImage(with: URL(string: urlString), placeholderImage: placeholder)
+        
     }
 
 }

@@ -15,6 +15,10 @@
 		557F1FA423824FAE0059C3DE /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557F1FA323824FAE0059C3DE /* Environment.swift */; };
 		557F1FA623824FC20059C3DE /* EndpointError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557F1FA523824FC20059C3DE /* EndpointError.swift */; };
 		557F1FA823825A9D0059C3DE /* Date+ElapsedTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557F1FA723825A9D0059C3DE /* Date+ElapsedTime.swift */; };
+		557F1FAB23826C6F0059C3DE /* MemoryStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557F1FAA23826C6F0059C3DE /* MemoryStorage.swift */; };
+		557F1FAD23826C8C0059C3DE /* StorageObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557F1FAC23826C8C0059C3DE /* StorageObject.swift */; };
+		557F1FAF23826CA40059C3DE /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557F1FAE23826CA40059C3DE /* ImageDownloader.swift */; };
+		557F1FB123826D040059C3DE /* UIImageView+ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557F1FB023826D040059C3DE /* UIImageView+ImageDownloader.swift */; };
 		55B1CD5C238053FE00224913 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B1CD5B238053FE00224913 /* AppDelegate.swift */; };
 		55B1CD5E238053FE00224913 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B1CD5D238053FE00224913 /* SceneDelegate.swift */; };
 		55B1CD63238053FE00224913 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55B1CD61238053FE00224913 /* Main.storyboard */; };
@@ -54,6 +58,10 @@
 		557F1FA323824FAE0059C3DE /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		557F1FA523824FC20059C3DE /* EndpointError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointError.swift; sourceTree = "<group>"; };
 		557F1FA723825A9D0059C3DE /* Date+ElapsedTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+ElapsedTime.swift"; sourceTree = "<group>"; };
+		557F1FAA23826C6F0059C3DE /* MemoryStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryStorage.swift; sourceTree = "<group>"; };
+		557F1FAC23826C8C0059C3DE /* StorageObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageObject.swift; sourceTree = "<group>"; };
+		557F1FAE23826CA40059C3DE /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
+		557F1FB023826D040059C3DE /* UIImageView+ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+ImageDownloader.swift"; sourceTree = "<group>"; };
 		55B1CD58238053FE00224913 /* Redditor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Redditor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55B1CD5B238053FE00224913 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55B1CD5D238053FE00224913 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -102,6 +110,16 @@
 				557F1FA323824FAE0059C3DE /* Environment.swift */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		557F1FA923826C5E0059C3DE /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				557F1FAA23826C6F0059C3DE /* MemoryStorage.swift */,
+				557F1FAC23826C8C0059C3DE /* StorageObject.swift */,
+				557F1FAE23826CA40059C3DE /* ImageDownloader.swift */,
+			);
+			path = Cache;
 			sourceTree = "<group>";
 		};
 		55B1CD4F238053FE00224913 = {
@@ -200,6 +218,7 @@
 			children = (
 				55CF743F2381FB2600412A19 /* UITableView+Reusable.swift */,
 				55CF744E23820C0F00412A19 /* UIView+Autolayout.swift */,
+				557F1FB023826D040059C3DE /* UIImageView+ImageDownloader.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -216,6 +235,7 @@
 		55CF74442381FF3500412A19 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				557F1FA923826C5E0059C3DE /* Cache */,
 				557F1F9E23824F720059C3DE /* Endpoint.swift */,
 				557F1FA523824FC20059C3DE /* EndpointError.swift */,
 				557F1FA023824F930059C3DE /* HTTPMethod.swift */,
@@ -354,13 +374,17 @@
 				55B1CD5C238053FE00224913 /* AppDelegate.swift in Sources */,
 				55CF744B2381FF8C00412A19 /* Post.swift in Sources */,
 				557F1FA123824F930059C3DE /* HTTPMethod.swift in Sources */,
+				557F1FB123826D040059C3DE /* UIImageView+ImageDownloader.swift in Sources */,
 				55CF744D2381FFDE00412A19 /* PostRepository.swift in Sources */,
+				557F1FAD23826C8C0059C3DE /* StorageObject.swift in Sources */,
+				557F1FAF23826CA40059C3DE /* ImageDownloader.swift in Sources */,
 				557F1FA423824FAE0059C3DE /* Environment.swift in Sources */,
 				55CF74482381FF6000412A19 /* NetworkClient.swift in Sources */,
 				557F1F9923824E950059C3DE /* Response.swift in Sources */,
 				55B1CD5E238053FE00224913 /* SceneDelegate.swift in Sources */,
 				557F1F9F23824F720059C3DE /* Endpoint.swift in Sources */,
 				55CF74402381FB2600412A19 /* UITableView+Reusable.swift in Sources */,
+				557F1FAB23826C6F0059C3DE /* MemoryStorage.swift in Sources */,
 				55B1CD8523805C3C00224913 /* SplitViewConfigurator.swift in Sources */,
 				557F1FA623824FC20059C3DE /* EndpointError.swift in Sources */,
 				55B1CD82238058B800224913 /* PostsTableViewController.swift in Sources */,
