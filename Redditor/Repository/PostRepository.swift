@@ -68,4 +68,8 @@ final class PostRepository: Repository {
         
         posts.remove(at: indexPath.row)
     }
+    
+    func removeAll() {
+        posts = []
+    }
 }

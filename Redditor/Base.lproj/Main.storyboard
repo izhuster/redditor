@@ -89,7 +89,7 @@ Select a post to see it here.</string>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dot.radiowaves.left.and.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="WYZ-fc-EZQ">
                                                             <rect key="frame" x="0.0" y="1" width="70" height="68.333333333333329"/>
-                                                            <color key="tintColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="tintColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="70" id="AyY-Fv-22h"/>
                                                                 <constraint firstAttribute="height" constant="70" id="tOW-8f-uec"/>
@@ -133,11 +133,8 @@ Select a post to see it here.</string>
                                                         <constraint firstAttribute="height" constant="33" id="04c-VV-Hqq"/>
                                                         <constraint firstAttribute="width" constant="33" id="EKf-S1-5In"/>
                                                     </constraints>
-                                                    <color key="tintColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="tintColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <state key="normal" backgroundImage="trash.circle" catalog="system"/>
-                                                    <connections>
-                                                        <action selector="removeTouchUpInside:" destination="7F6-bN-Kad" eventType="touchUpInside" id="JXM-mI-W6U"/>
-                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -185,8 +182,37 @@ Select a post to see it here.</string>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Root View Controller" id="kME-hD-zgk"/>
+                    <connections>
+                        <outlet property="dismissAllContainerView" destination="v86-M0-lFY" id="qc5-gk-de8"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ko4-JG-nhV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="v86-M0-lFY">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Hd-KB-smR">
+                            <rect key="frame" x="149" y="0.0" width="116" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="Nw0-P2-7dP"/>
+                            </constraints>
+                            <state key="normal" title="Dismiss All Posts">
+                                <color key="titleColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="dismissAllPostsTouchUpInside:" destination="8w0-XT-fiz" eventType="touchUpInside" id="HPH-b7-HKi"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstItem="2Hd-KB-smR" firstAttribute="top" secondItem="v86-M0-lFY" secondAttribute="top" id="BPv-Iw-M1f"/>
+                        <constraint firstItem="LcK-Pg-enA" firstAttribute="bottom" secondItem="2Hd-KB-smR" secondAttribute="bottom" id="SaT-nd-JIj"/>
+                        <constraint firstItem="2Hd-KB-smR" firstAttribute="centerY" secondItem="v86-M0-lFY" secondAttribute="centerY" id="WoL-fB-wqS"/>
+                        <constraint firstItem="2Hd-KB-smR" firstAttribute="centerX" secondItem="v86-M0-lFY" secondAttribute="centerX" id="xLK-dJ-yeR"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="LcK-Pg-enA"/>
+                </view>
             </objects>
             <point key="canvasLocation" x="824.63768115942037" y="-595.3125"/>
         </scene>

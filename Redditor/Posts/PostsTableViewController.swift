@@ -13,26 +13,51 @@ final class PostsTableViewController: UITableViewController {
     // MARK: - Public Properties
     // MARK: -
     var postRepository: PostRepository?
+    @IBOutlet private var dismissAllContainerView: UIView!
     
     // MARK: - Life View Cycle
     // MARK: -
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureTableView()
+        requestFetchData()
+    }
+    
+    // MARK: - Network
+    // MARK: -
+    private func requestFetchData() {
         postRepository?.fetchData(completion: { [weak self] (result) in
             guard let self = self else { return }
             switch result {
             case .success(let success):
                 print("fetch was successful: \(success)")
                 if success {
-                    DispatchQueue.main.async {
-                        let indexSet = IndexSet(integer: 0)
-                        self.tableView.reloadSections(indexSet, with: .automatic)
-                    }
+                    self.reloadData()
                 }
             case .failure(let error):
                 print(error)
             }
         })
+    }
+    
+    // MARK: - Configurations
+    // MARK: -
+    private func configureTableView() {
+        tableView.tableFooterView = dismissAllContainerView
+    }
+    
+    // MARK: - Actions
+    // MARK: -
+    @IBAction func dismissAllPostsTouchUpInside(_ sender: UIButton) {
+        postRepository?.removeAll()
+        reloadData()
+    }
+    
+    private func reloadData() {
+        DispatchQueue.main.async {
+            let indexSet = IndexSet(integer: 0)
+            self.tableView.reloadSections(indexSet, with: .automatic)
+        }
     }
 
     // MARK: - Table view data source
@@ -104,6 +129,10 @@ final class PostsTableViewController: UITableViewController {
             postRepository?.removeItem(at: indexPath)
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
+    }
+
+    override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return UIView()
     }
 
 }

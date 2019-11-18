@@ -19,4 +19,5 @@ protocol Repository: AnyObject {
     func markAsSeen(withId id: String)
     func alreadySeen(withId id: String) -> Bool
     func removeItem(at indexPath: IndexPath)
+    func removeAll()
 }
