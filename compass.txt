@@ -1,0 +1,66 @@
+mport android.hardware.SensorManager;
+
+private SensorManager mSensorManager;
+
+mSensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
+
+public class listener implements SensorEventListener {
+
+
+@Override
+public void onSensorChanged(SensorEvent event) {
+//Get Rotation Vector Sensor Values
+float[] g = event.values.clone();
+
+//Normalise
+double norm = Math.sqrt(g[0] * g[0] + g[1] * g[1] + g[2] * g[2] + g[3] * g[3]);
+g[0] /= norm;
+g[1] /= norm;
+g[2] /= norm;
+g[3] /= norm;
+
+//Set values to commonly known quaternion letter representatives
+double x = g[0];
+double y = g[1];
+double z = g[2];
+double w = g[3];
+
+//Calculate Azimuth in degrees (0 to 360; 0 = North, 90 = East, 180 = South, 270 = West)
+double sinA = 2.0 * (w * z + x * y);
+double cosA = 1.0 - 2.0 * (y * y + z * z);
+float azimuth = 360 - Math.round(Math.atan2(sinA, cosA) * (180 / Math.PI));
+while(azimuth < 0){
+azimuth += 360;
+}
+azimuth = azimuth %360;
+
+
+UserLocation.getInstance().setRotation(azimuth);
+float rotate = 360 - azimuth;
+float curr = jController.getMapView().getCurrentRotation();
+while(curr < 0){
+curr += 360;
+}
+curr = curr %360;
+if(Math.abs(curr - rotate) > 90){
+Transform transform = new Transform();
+transform.setTranslate(UserLocation.getInstance().getPosition());
+transform.setRotate(rotate);
+transform.setScale(jController.getMapView().getCurrentScale());
+isAnimationContinue.set(true);
+jController.getMapView().setMapTransform(transform, 90, null);
+}
+}
+
+@Override
+public void onAccuracyChanged(Sensor sensor, int accuracy) {
+
+}
+
+}
+public void startOrientation(SensorManager sensorManager) {
+Sensor compass = sensorManager.getDefaultSensor(Sensor.TYPE_ROTATION_VECTOR);
+if(compass != null){
+sensorManager.registerListener(listener, compass, SensorManager.SENSOR_DELAY_NORMAL, 250);
+}
+}
